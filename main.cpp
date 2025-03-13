@@ -54,12 +54,12 @@ bool PreprocessImpl(const path& in_file, ifstream& in, ofstream& outs, const vec
 
             }
 
-            ifstream in(file_directory);
+            ifstream in_directory(file_directory);
             if (!in) {
                 return false;
             }
 
-            if (!PreprocessImpl(file_directory, in, outs, include_directories)) {
+            if (!PreprocessImpl(file_directory, in_directory, outs, include_directories)) {
                 return false;
             }
         }
@@ -84,12 +84,12 @@ bool PreprocessImpl(const path& in_file, ifstream& in, ofstream& outs, const vec
                 return false;
             }
 
-            ifstream in(file_directory);
+            ifstream in_directory(file_directory);
             if (!in) {
                 return false;
             }
 
-            if (!PreprocessImpl(file_directory, in, outs, include_directories)) {
+            if (!PreprocessImpl(file_directory, in_directory, outs, include_directories)) {
                 return false;
             }
         }
